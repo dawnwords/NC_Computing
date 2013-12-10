@@ -1,11 +1,13 @@
 package core;
 
 public interface Calculatable<T> {
-  T plus(T t);
+    T plus(T t);
 
-  T square();
+    T square();
 
-  T divide(double n);
+    T divide(double n);
 
-  T minus(T t);
+    T minus(T t);
+
+    T squareRoot();
 }

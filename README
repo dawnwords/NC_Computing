@@ -1,0 +1,22 @@
+root
+- src
+	All source files in java
+
+- archive
+	- run.bat : start parsing programing
+	- NC_Files : data given
+	- NC_Computing.jar : jar file
+
+	See result in \NC_Files\Setup (A|B)\out
+
+- diagram.R
+	R script parsing result into NC_Computing.pdf
+
+	P.S. modify some absolute path in diagram.R before running it
+
+- NC_Computing.pdf
+	generated pdf file containing 18 graphs of each column in the 
+	merged result data between two Setup
+
+- README
+	README file

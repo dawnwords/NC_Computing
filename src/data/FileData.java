@@ -1,54 +1,63 @@
 package data;
 
+import core.Calculatable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import core.Calculatable;
-
 public class FileData implements Calculatable<FileData> {
-  private List<Row> rows;
+    private List<Row> rows;
 
-  public FileData(List<Row> rows) {
-    this.rows = rows;
-  }
-
-  @Override
-  public FileData plus(FileData filedata) {
-    ArrayList<Row> result = new ArrayList<Row>();
-    for (int i = 0; i < rows.size(); i++) {
-      result.add(rows.get(i).plus(filedata.rows.get(i)));
+    public FileData(List<Row> rows) {
+        this.rows = rows;
     }
-    return new FileData(result);
-  }
 
-  @Override
-  public FileData square() {
-    ArrayList<Row> result = new ArrayList<Row>();
-    for (Row row : rows) {
-      result.add(row.square());
+    @Override
+    public FileData plus(FileData filedata) {
+        ArrayList<Row> result = new ArrayList<Row>();
+        for (int i = 0; i < rows.size(); i++) {
+            result.add(rows.get(i).plus(filedata.rows.get(i)));
+        }
+        return new FileData(result);
     }
-    return new FileData(result);
-  }
 
-  @Override
-  public FileData divide(double n) {
-    ArrayList<Row> result = new ArrayList<Row>();
-    for (Row row : rows) {
-      result.add(row.divide(n));
+    @Override
+    public FileData square() {
+        ArrayList<Row> result = new ArrayList<Row>();
+        for (Row row : rows) {
+            result.add(row.square());
+        }
+        return new FileData(result);
     }
-    return new FileData(result);
-  }
 
-  @Override
-  public FileData minus(FileData data) {
-    ArrayList<Row> result = new ArrayList<Row>();
-    for (int i = 0; i < rows.size(); i++) {
-      result.add(rows.get(i).minus(data.rows.get(i)));
+    @Override
+    public FileData divide(double n) {
+        ArrayList<Row> result = new ArrayList<Row>();
+        for (Row row : rows) {
+            result.add(row.divide(n));
+        }
+        return new FileData(result);
     }
-    return new FileData(result);
-  }
 
-  public List<Row> getRows() {
-    return rows;
-  }
+    @Override
+    public FileData minus(FileData data) {
+        ArrayList<Row> result = new ArrayList<Row>();
+        for (int i = 0; i < rows.size(); i++) {
+            result.add(rows.get(i).minus(data.rows.get(i)));
+        }
+        return new FileData(result);
+    }
+
+    @Override
+    public FileData squareRoot() {
+        ArrayList<Row> result = new ArrayList<Row>();
+        for (Row row : rows) {
+            result.add(row.squareRoot());
+        }
+        return new FileData(result);
+    }
+
+    public List<Row> getRows() {
+        return rows;
+    }
 }
